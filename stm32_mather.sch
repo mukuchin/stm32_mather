@@ -6188,6 +6188,8 @@ https://akizukidenshi.com/catalog/c/cceralock/</description>
 <part name="U$15" library="user_leds" deviceset="RGB_LED" device=""/>
 <part name="LED2" library="user_leds" deviceset="1608LED" device=""/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R16" library="user_rcl" deviceset="R_REG" device="" value="10k"/>
+<part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6426,6 +6428,13 @@ https://akizukidenshi.com/catalog/c/cceralock/</description>
 </instance>
 <instance part="GND17" gate="1" x="190.5" y="93.98" smashed="yes">
 <attribute name="VALUE" x="187.96" y="91.44" size="1.778" layer="96"/>
+</instance>
+<instance part="R16" gate="G$1" x="101.6" y="165.1" smashed="yes">
+<attribute name="NAME" x="97.79" y="166.5986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="97.79" y="161.798" size="1.778" layer="96"/>
+</instance>
+<instance part="GND18" gate="1" x="109.22" y="160.02" smashed="yes">
+<attribute name="VALUE" x="106.68" y="157.48" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -6934,6 +6943,12 @@ https://akizukidenshi.com/catalog/c/cceralock/</description>
 <pinref part="U$15" gate="G$1" pin="B_A"/>
 <wire x1="200.66" y1="101.6" x2="200.66" y2="99.06" width="0.1524" layer="91"/>
 <junction x="200.66" y="99.06"/>
+</segment>
+<segment>
+<pinref part="R16" gate="G$1" pin="2"/>
+<wire x1="106.68" y1="165.1" x2="109.22" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+<wire x1="109.22" y1="165.1" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="V3.3" class="0">
@@ -7512,6 +7527,13 @@ https://akizukidenshi.com/catalog/c/cceralock/</description>
 <pinref part="MCU1" gate="G$1" pin="33_PB12&lt;"/>
 <wire x1="142.24" y1="63.5" x2="149.86" y2="63.5" width="0.1524" layer="91"/>
 <label x="149.86" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$33" class="0">
+<segment>
+<pinref part="R16" gate="G$1" pin="1"/>
+<pinref part="MCU1" gate="G$1" pin="60_BOOT0"/>
+<wire x1="96.52" y1="165.1" x2="96.52" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
